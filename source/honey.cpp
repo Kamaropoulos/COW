@@ -1,5 +1,9 @@
 //--------------------------------------------
-// COW PROGRAMMING LANGUAGE
+// HONEY PROGRAMMING LANGUAGE
+// by: Kamaropoulos kamaropoulos@outlook.com
+//
+// A Fork of the COW PROGRAMMING LANGUAGE
+//           https://github.com/BigZaphod/COW
 // by: BigZaphod sean@fifthace.com
 // http://www.bigzaphod.org/cow/
 // 
@@ -39,7 +43,7 @@ bool exec( int instruction )
 
     switch( instruction )
     {
-    // moo
+    // yum
     case 0:
         {
             if( prog_pos == program.begin() )
@@ -67,7 +71,7 @@ bool exec( int instruction )
             return exec( *prog_pos );
         }
     
-    // mOo
+    // yUm
     case 1:
         if( mem_pos == memory.begin() )
             quit( true );
@@ -75,7 +79,7 @@ bool exec( int instruction )
             mem_pos--;
         break;
 
-    // moO
+    // yuM
     case 2:
         mem_pos++;
         if( mem_pos == memory.end() )
@@ -86,13 +90,13 @@ bool exec( int instruction )
         }
         break;
     
-    // mOO    
+    // yUM    
     case 3:
         if( (*mem_pos) == 3 )
             quit( false );
         return exec(*mem_pos);
     
-    // Moo
+    // Yum
     case 4:
         if( (*mem_pos) != 0 )
             printf( "%c", *mem_pos );
@@ -103,17 +107,17 @@ bool exec( int instruction )
         }
         break;
     
-    // MOo
+    // YUm
     case 5:
         (*mem_pos)--;
         break;
     
-    // MoO
+    // YuM
     case 6:
         (*mem_pos)++;
         break;
 
-    // MOO
+    // YUM
     case 7:
         if( (*mem_pos) == 0 )
         {
@@ -145,7 +149,7 @@ bool exec( int instruction )
         }
         break;
     
-    // OOO
+    // UUU
     case 8:
         (*mem_pos) = 0;
         break;
@@ -159,12 +163,12 @@ bool exec( int instruction )
         has_register_val = !has_register_val;
         break;
 
-    // OOM
+    // MUY
     case 10:
         printf( "%d\n", *mem_pos );
         break;
     
-    // oom
+    // yum
     case 11:
         {
             char buf[100];
@@ -202,7 +206,7 @@ int main( int argc, char** argv )
 {
 	if( argc < 2 )
 	{
-		printf( "Usage: %s program.cow\n\n", argv[0] );
+		printf( "Usage: %s program.honey\n\n", argv[0] );
 		exit( 1 );
 	}
 
@@ -223,29 +227,29 @@ int main( int argc, char** argv )
         int found = 0;
         buf[2] = fgetc( f );
 
-        if( found = !strncmp( "moo", buf, 3 ) )
+        if( found = !strncmp( "yum", buf, 3 ) )
             program.push_back( 0 );
-        else if( found = !strncmp( "mOo", buf, 3 ) )
+        else if( found = !strncmp( "yUm", buf, 3 ) )
             program.push_back( 1 );
-        else if( found = !strncmp( "moO", buf, 3 ) )
+        else if( found = !strncmp( "yuM", buf, 3 ) )
             program.push_back( 2 );
-        else if( found = !strncmp( "mOO", buf, 3 ) )
+        else if( found = !strncmp( "yUM", buf, 3 ) )
             program.push_back( 3 );
-        else if( found = !strncmp( "Moo", buf, 3 ) )
+        else if( found = !strncmp( "Yum", buf, 3 ) )
             program.push_back( 4 );
-        else if( found = !strncmp( "MOo", buf, 3 ) )
+        else if( found = !strncmp( "YUm", buf, 3 ) )
             program.push_back( 5 );
-        else if( found = !strncmp( "MoO", buf, 3 ) )
+        else if( found = !strncmp( "YuM", buf, 3 ) )
             program.push_back( 6 );
-        else if( found = !strncmp( "MOO", buf, 3 ) )
+        else if( found = !strncmp( "YUM", buf, 3 ) )
             program.push_back( 7 );
-        else if( found = !strncmp( "OOO", buf, 3 ) )
+        else if( found = !strncmp( "UUU", buf, 3 ) )
             program.push_back( 8 );
         else if( found = !strncmp( "MMM", buf, 3 ) )
             program.push_back( 9 );
-        else if( found = !strncmp( "OOM", buf, 3 ) )
+        else if( found = !strncmp( "MUY", buf, 3 ) )
             program.push_back( 10 );
-        else if( found = !strncmp( "oom", buf, 3 ) )
+        else if( found = !strncmp( "muy", buf, 3 ) )
             program.push_back( 11 );
             
         if( found )
@@ -263,7 +267,7 @@ int main( int argc, char** argv )
 	fclose( f );
 
 #ifndef NO_GREETINGS
-	printf( "Welcome to COW!\n\nExecuting [%s]...\n\n", argv[1] );
+	printf( "Welcome to Honey!\n\nExecuting [%s]...\n\n", argv[1] );
 #endif
 
     // init main memory.
