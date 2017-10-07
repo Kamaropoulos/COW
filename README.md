@@ -1,1 +1,1 @@
-COW is a toy esoteric language. See the [classic COW webpage](http://bigzaphod.github.com/COW/) for more info!
+WinnieThePooh is kinda noisy when eating his honey. But it ain't nonsense! He's speaking Honey, a toy esoteric language.
